@@ -19,7 +19,7 @@ def start_screen(scr):
             break
 
         elif ord(key) == 106:
-            gameplay.gameplay(scr)
+            gameplay.game(scr)
 
         elif ord(key) == 105:
             instructions_screen(scr)
