@@ -1,1 +1,1 @@
-# Jogo-da-Velha-Terminal
+# Jokenpo-Terminal
