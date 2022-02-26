@@ -6,4 +6,4 @@ def title(scr, y=0, txt=''):
     scr.addstr(y+2, 0, '-'*(line_width+4) )
 
 def line(scr):
-    scr.addstr('-'*(line_width+4) )
+    scr.addstr('-'*(line_width-16) )
