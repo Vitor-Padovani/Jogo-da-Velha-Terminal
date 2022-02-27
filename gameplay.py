@@ -1,7 +1,11 @@
 import misc
 from random import randint
 
-options = ['Pedra', 'Papel', 'Tesoura']
+options = [
+['Pedra', '(º_)'],
+['Papel',  '[ ]'],
+['Tesoura',  '8<']
+ ]
 
 results = [
     ['Empate', 'Derrota', 'Vitória'], 
@@ -27,15 +31,10 @@ def game(scr):
 
         comp = randint(0, 2)
 
-        misc.line(scr)
-
-        scr.addstr(f'''
-        Você jogou {options[int(key)]}
-        ''')
-        scr.addstr(f'''
-        Computador jogou {options[comp]}
-        ''')
-        scr.addstr(f'''
-        O resultado foi {results[int(key)][comp]}
-        ''')
+        misc.line(scr, 5, 5)
+        
+        scr.clear()
+        scr.addstr(6, 5, options[int(key)][1])
+        scr.addstr(6, 20, options[comp][1])
+        scr.addstr(16, 5, results[int(key)][comp])
         scr.refresh()
