@@ -14,13 +14,11 @@ results = [
 ]
 
 def game(scr):
-    
     scr.clear()
     misc.title(scr, txt='Gameplay')
     scr.addstr('''
     0 - pedra | 1 - papel | 2 - tesoura | ESC - sair
     ''')
-    scr.refresh()
 
     while True:
         key = scr.getkey()
@@ -29,12 +27,26 @@ def game(scr):
         if key not in ('0', '1', '2'):
             continue
 
+        scr.clear()
+        misc.title(scr, txt='Gameplay')
+        scr.addstr('''
+    0 - pedra | 1 - papel | 2 - tesoura | ESC - sair
+        ''')
+
         comp = randint(0, 2)
 
-        misc.line(scr, 5, 5)
+        misc.line(scr, 4, 5)
         
-        scr.clear()
-        scr.addstr(6, 5, options[int(key)][1])
-        scr.addstr(6, 20, options[comp][1])
-        scr.addstr(16, 5, results[int(key)][comp])
+        scr.addstr(6, 23, options[int(key)][1])
+        scr.addstr(7, 22, options[int(key)][0])
+
+        scr.addstr(6, 29, 'X')
+
+        scr.addstr(6, 33, options[comp][1])
+        scr.addstr(7, 32, options[comp][0])
+
+        scr.addstr(9, 20, f'Você jogou: {options[int(key)][0]}')
+        scr.addstr(10, 15, f'Computador jogou: {options[comp][0]}')
+        scr.addstr(11, 16, f'O resultado foi: {results[int(key)][comp]}')
+
         scr.refresh()
